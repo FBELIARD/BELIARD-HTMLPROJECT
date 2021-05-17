@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Projet Web</title>
+		<link href="style.css" rel="stylesheet">
+		<script>
+			//tableaux de valeurs
+			var images = new Array();
+			images.push("Images/slide1.jpg");
+			images.push("Images/slide2.jpg");
+			images.push("Images/slide3.jpg");
+			
+			var imagesClick = new Array();
+			imagesClick.push("Images/slide1.jpg");
+			imagesClick.push("Images/slide2.jpg");
+			imagesClick.push("Images/slide3.jpg");
+			
+			var pointeur = 0;
+			
+			function changePicture(){
+				document.getElementById("imgmaison").src = images[pointeur];
+ 
+				if(pointeur < images.length - 1){
+					pointeur++;
+				}
+				else {
+					pointeur = 0;
+				}
+ 
+				setTimeout("changePicture()", 10000)
+			}
+			
+			window.onload = function(){changePicture();}
+
+			
+			function changePictureClick() {
+				document.getElementById('imgmaison').src= imagesClick[pointeur];
+				
+				if(pointeur < images.length - 1){
+					pointeur++;
+				}
+				else {
+					pointeur = 0;
+				}
+			}
+		</script>
+		<meta charset="UTF-8">
+	</head>
+	
+	<body>
+		<header>
+			<div class="headerdiv">
+				<img src="Images/bauhaus.png" alt="Bauhaus" id="bauhausimg">				
+			</div>
+			<div class="headerdiv" id="headerdiv1">
+				<h1 id="callus">Call us: </h1>
+				<h1 id="phonenumber">(+080) 9684 32 45 789</h1>
+			</div>
+			<div class="headerdiv">
+				<img src="Images/twitter.png" alt="Twitter" class="headerimg">
+				<img src="Images/facebook.png" alt="Facebook" class="headerimg">
+				<img src="Images/googleplus.png" alt="Google Plus" class="headerimg">
+				<img src="Images/linkedin.png" alt="LinkedIn" class="headerimg">
+				<img src="Images/basketball.png" alt="BasketBall" class="headerimg">
+			</div>
+			<div class="headerdiv" id="headerdiv2">
+				<h1>Menu  ☰</h1>
+			</div>
+		</header>
+		<main>
+			<div class="boite">
+				<img rel="maison" src="Images/slide1.jpg" id="imgmaison" onclick="changePictureClick();">
+			</div>
+			<div id="leader">
+				<div class="leader">
+					<h1>We Are The Leader In The Architectural</h1>
+					For each project we establish relationships with partners who we know will help us create added value
+					for your project. As well as bringing together the public and private sectors, we make sector-overarching
+					links to gather knowledge and to learn from each other.
+					<img src="Images/26Years.png" alt="26years">
+				</div>
+				<div class="leader">
+					<img src="Images/batiment.png" alt="batiment" id="batiment">
+				</div>
+			</div>
+			<h1 class="h1titre">Latest Projects</h1>
+			<div class="container">
+				<img src="Images/projects1.jpg" alt="maison1" class="imgmaison" id="maison1" onclick="afficher(maison1);">
+				<div class="overlay">
+					<div class="text">Hello World</div>
+				</div>
+			
+				<img src="Images/projects2.jpg" alt="maison2" class="imgmaison" id="maison2" onclick="afficher();">
+				<img src="Images/projects3.jpg" alt="maison3" class="imgmaison" id="maison3" onclick="afficher(maison3);">
+				<img src="Images/projects4.jpg" alt="maison4" class="imgmaison" id="maison4" onclick="afficher(maison4);">
+			</div>
+			<div>
+				<h1 class="h1titre">From Great Our Clients</h1>
+				<div id="fromclients1" class="fromclients">
+					Suspendisse laoreet dictum nunc, sed vehicula nibh. Quisque sed suscipit massa. Integer quis nunc eget nisi lacinia placerat.
+					Etiam ac augue mauris. Sed laoreet faucibus mi quis convallis. Donec porta facilisis velit, in aliquet elit porta ut.
+					Maecenas at varius eros. Mauris euismod ante non dolor molestie, eu commodo ligula consectetur.
+					Mauris ultricies lectus sit amet velit volutpat, at aliquet risus aliquam. Fusce at eros ut nibh faucibus facilisis.
+					Aliquam consequat metus urna, nec mollis nibh gravida vel. Suspendisse id nibh semper, posuere eros eu, finibus dui.
+					Ut varius urna et tortor aliquet lacinia. Etiam et bibendum ante.
+				</div>
+				<div id="fromclients2" class="fromclients">
+					Ut eget gravida diam, a bibendum nisl. Praesent eu laoreet elit. Interdum et malesuada fames ac ante ipsum primis in faucibus. 
+					Sed facilisis vitae mi a tincidunt. Cras porta fringilla orci ac vestibulum. Sed viverra turpis vel justo mattis, a tempus arcu sagittis.
+					Praesent sagittis ut ligula a lacinia. Duis cursus a libero in faucibus. Vivamus egestas egestas lacinia.
+					Sed pulvinar tortor at ex lobortis, id euismod ipsum tincidunt. Sed vitae scelerisque ipsum. Duis at ante in felis pellentesque
+					commodo sit amet ut lorem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+					Phasellus dignissim felis id dignissim imperdiet. Vestibulum lobortis lacus vitae tempor luctus.
+				</div>
+			</div>
+			<div>
+				<h1 class="h1titre">Latest news</h1>
+				<div class="container">
+					<img src="Images/slide2.jpg" alt="maison5" class="imgmaison2" id="maison5">
+					<img src="Images/slide3.jpg" alt="maison6" class="imgmaison2" id="maison6">
+					<img src="Images/slide4.jpg" alt="maison7" class="imgmaison2" id="maison7">
+				</div>
+			</div>
+		</main>
+		<footer>
+			<div>
+				<img src="Images/bauhaus.png" alt="bauhaus" id="bauhausfooter">
+			</div>
+			<div>
+				© Bauhaus 2017<br>
+				All rights reserved
+			</div>
+			<div>
+				<a href="Sitemap.html">Site Map</a><br>
+				<a href="Term.html">Term & Conditions</a><br>
+				<a href="Policy.html">Privacy Policy</a><br>
+				<a href="Help.html">Help</a><br>
+				<a href="Affiliate.html">Affiliate</a>
+			</div>
+			<div>
+				<a href="Location.html">Our location</a><br>
+				<a href="Career.html">Career</a><br>
+				<a href="About.html">About</a><br>
+				<a href="Contact.html">Contact</a>
+			</div>
+			<div>
+				<select>
+					<option value="English" selected>English</option>
+					<option value="Français">Français</option>
+					<option value="Español">Español</option>
+					<option value="Português">Português</option>
+					<option value="Dansk">Dansk</option>
+				</select>
+			</div>
+			<div>
+				<img src="Images/twitter.png" alt="Twitter" class="headerimg">
+				<img src="Images/facebook.png" alt="Facebook" class="headerimg">
+				<img src="Images/googleplus.png" alt="Google Plus" class="headerimg">
+				<img src="Images/linkedin.png" alt="LinkedIn" class="headerimg">
+				<img src="Images/basketball.png" alt="BasketBall" class="headerimg">
+			</div>
+		</footer>
+	</body>
+</html>
